@@ -1,4 +1,4 @@
-# MacDonald Parser 
+# MacDonalds Scraper 
 
 
 ## Environment Setup
