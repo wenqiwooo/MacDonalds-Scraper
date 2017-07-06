@@ -27,5 +27,6 @@ if __name__ == '__main__':
   # but browser can be replaced with browser = webdriver.FireFox(),
   # which is good for debugging.
   browser = webdriver.PhantomJS(PHANTOMJS_PATH, service_args=['--ignore-ssl-errors=true'])
-  # Do for every zipcode
-  open_url(browser, 94040)
+  zipcode = raw_input('What zipcode are you at?\n')
+  print('Scraping for data...')
+  open_url(browser, zipcode)
