@@ -16,5 +16,5 @@ Update `PHANTOMJS_PATH` in *main.py* to point to the location of the binary/exec
 
 ## Things to note
 * MacDonald's only loads the first 5 locations. Use selenium to simulate click on *Load More* button to fetch more data.
-* Some websites fetch data asynchronously. Wait for them to finish loading before instantiating a bs4 object.
+* The MacDonald's website fetches data asynchronously. To ensure all the data has been fetched, wait for it to finish loading before instantiating a BeautifulSoup object.
 
