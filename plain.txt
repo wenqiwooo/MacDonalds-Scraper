@@ -1,0 +1,28 @@
+<ul aria-label="{{fullRlData.arialabelsearchresult}}" class="restaurant-location-list container">
+<!--div.restaurant-location__-->
+<li class="restaurant-location row" data-ng-repeat="restaurant in restaurants | limitTo:resultShown" id="restaurant-location-list-{{restaurant.properties.id}}" ng-show="restaurant.isEnabled">
+<div class="container-fluid">
+<div class="row">
+<div class="col-xs-12 col-sm-3 col-md-3">
+<div class="restaurant-location__address-container">
+<a aria-controls="rlRestDetails-{{restaurant.properties.id}}-collapse" aria-expanded="false" class="expand-mobile pull-right collapsed" data-toggle="collapse" href="#rlRestDetails-{{restaurant.properties.id}}-collapse" ng-click="setAlerts($event)" role="button">
+<span class="visuallyhidden">
+<span class="closed">{{fullRlData.arialabelexpandrestdetail}} - {{fullRlData.restaurantNumberText}} {{restaurant.enabledCount}}</span>
+<span class="open">{{fullRlData.arialabelcloserestdetail}} - {{fullRlData.restaurantNumberText}} {{restaurant.enabledCount}}</span>
+</span>
+</a>
+<div aria-label="{{fullRlData.restaurantNumberText}} {{restaurant.enabledCount}}" class="restaurant-location__map-pin" ng-bind="restaurant.enabledCount"> </div>
+<div class="restaurant-location__construction" ng-bind="restaurant.properties.storeNotice"></div>
+<h3 class="restaurant-location__title" ng-bind="restaurant.properties.name?restaurant.properties.name:restaurant.properties.addressLine1"></h3>
+<h4 class="restaurant-location__address" ng-bind-html="getRestaurantFullAddress1(restaurant.properties.name, restaurant.properties.addressLine1, restaurant.properties.addressLine3, restaurant.properties.subDivision, restaurant.properties.postcode)"></h4>
+<div class="restaurant-location__friendly-text">
+<p ng-bind="restaurant.properties.longDescription" ng-cloak="" ng-if="fullRlData.showCustomerFriendlyText"></p>
+</div>
+<div class="restaurant-location__preferred">
+<div class="radio"> <input aria-label="{{fullRlData.preferedText}}" id="rl-preferred-{{restaurant.properties.id}}" name="rl-preferred-location" ng-click="setPrefered(restaurant)" ng-cloak="" role="radio" type="radio" value="restaurant-location-list-{{restaurant.properties.id}}"/>
+<label for="rl-preferred-{{restaurant.properties.id}}">{{fullRlData.preferedText}}</label>
+</div>
+</div>
+</div>
+</div>
+<!--/.col-*-*-->
